@@ -1,0 +1,4 @@
+root: "{{ playbook_dir }}"
+env: mssql
+sshname: "tester"
+tester: vm-connection.sh

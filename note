@@ -1,0 +1,5 @@
+
+RG=new-transformer-dev2-identity-app-rg
+APP=new-transformer-dev2-identity-app-server
+az webapp deployment source config-zip -g $RG -n $APP --src app.zip
+

@@ -1,0 +1,11 @@
+
+sudo apt-get update
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+
+port=1433:1433
+volume=/opt/mssql:/var/opt/mssql
+container=mcr.microsoft.com/mssql/server:2017-latest
+name=mssql2017
+docker run --restart=always -dit --name $name -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=OHQ#Passw0rd' -e 'MSSQL_PID=Developer' -e 'SQLCOLLATION=SQL_Latin1_General_CP1_CI_AS' -p $port -v $volume $container
